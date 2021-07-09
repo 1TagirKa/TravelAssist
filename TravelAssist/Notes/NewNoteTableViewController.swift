@@ -7,19 +7,22 @@
 
 import UIKit
 
-class NewNoteTableViewController: UITableViewController {
+class NewNoteTableViewController: UIViewController {
    
-    var note = Standart(title: "", description: "", emoji: "", isFavourite: false)
+    var note = Standart(title: "", description: "", emoji: "", isDone: false)
     
     @IBOutlet weak var emojiTL: UITextField!
     @IBOutlet weak var nameTL: UITextField!
     @IBOutlet weak var descriptionTL: UITextField!
+    @IBOutlet weak var noteImage: UIImageView!
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateSaveButtonState()
+        noteImage.layer.cornerRadius = noteImage.frame.width / 2
+        noteImage.clipsToBounds = true
     }
     
     private func updateSaveButtonState(){
@@ -41,7 +44,7 @@ class NewNoteTableViewController: UITableViewController {
         let name = nameTL.text ?? ""
         let description = descriptionTL.text ?? ""
         
-        self.note = Standart(title: name, description: description, emoji: emoji, isFavourite: self.note.isFavourite)
+        self.note = Standart(title: name, description: description, emoji: emoji, isDone: self.note.isDone)
     }
     
 

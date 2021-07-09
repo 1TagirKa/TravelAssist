@@ -11,5 +11,5 @@ struct Standart {
     var title: String
     var description: String
     var emoji: String
-    var isFavourite: Bool
+    var isDone: Bool
 }
