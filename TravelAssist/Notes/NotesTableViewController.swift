@@ -29,9 +29,14 @@ class NotesTableViewController: UITableViewController {
         let sourceVC = segue.source as! NewNoteTableViewController
         let note = sourceVC.note
         
+        if let selectedCell = tableView.indexPathForSelectedRow{
+            unfulfilledNotes[selectedCell.row] = note
+            tableView.reloadRows(at: [selectedCell], with: .automatic)
+        } else {
         let indexPath = IndexPath(row: unfulfilledNotes.count, section: 0)
         unfulfilledNotes.append(note)
         tableView.insertRows(at: [indexPath], with: .automatic)
+        }
     }
 
 
@@ -90,11 +95,21 @@ class NotesTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let dvc = segue.destination as? DoneNoteTableViewController else{return}
-        for element in self.doneNote {
-            dvc.doneNotes.append(element)
+        super.prepare(for: segue, sender: sender)
+        guard segue.identifier == "editNote" else {
+            guard let dvc = segue.destination as? DoneNoteTableViewController else{return}
+            for element in self.doneNote {
+                dvc.doneNotes.append(element)
+            }
+            self.doneNote.removeAll()
+            return
         }
-        self.doneNote.removeAll()
+        let indexPath = tableView.indexPathForSelectedRow!
+        let note = unfulfilledNotes[indexPath.row]
+        let navigationVC = segue.destination as! UINavigationController
+        let newNoteVC = navigationVC.topViewController as! NewNoteTableViewController
+        newNoteVC.note = note
+        newNoteVC.title = "Edit"
     }
 
 }

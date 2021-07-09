@@ -21,6 +21,7 @@ class NewNoteTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateSaveButtonState()
+        updateUI()
         noteImage.layer.cornerRadius = noteImage.frame.width / 2
         noteImage.clipsToBounds = true
     }
@@ -31,6 +32,12 @@ class NewNoteTableViewController: UIViewController {
         let descriptionText = descriptionTL.text ?? ""
         
         saveButton.isEnabled = !emojiText.isEmpty && !nameText.isEmpty && !descriptionText.isEmpty
+    }
+    
+    private func updateUI(){
+        emojiTL.text = note.emoji
+        nameTL.text = note.title
+        descriptionTL.text = note.description
     }
     
     @IBAction func textChanged(_ sender: UITextField) {

@@ -22,6 +22,11 @@ class StandartNotesTableViewCell: UITableViewCell {
         descriptionLabel.text = object.description
         emojiLabel.text = object.emoji
     }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+    }
 
 
 }

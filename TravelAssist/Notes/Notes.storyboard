@@ -63,6 +63,7 @@
                                     <outlet property="descriptionLabel" destination="Jas-Fl-9uX" id="WqA-bI-86V"/>
                                     <outlet property="emojiLabel" destination="EI2-PZ-ZoW" id="pXc-Vh-iJZ"/>
                                     <outlet property="titleLabel" destination="c3n-i0-6Mj" id="eUP-3g-UL8"/>
+                                    <segue destination="5rt-7V-S1L" kind="show" identifier="editNote" id="ObJ-T9-whu"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -173,7 +174,7 @@
             </objects>
             <point key="canvasLocation" x="901" y="753"/>
         </scene>
-        <!--Note-->
+        <!--Add-->
         <scene sceneID="FeY-GN-Cyg">
             <objects>
                 <viewController id="slS-4f-a4l" customClass="NewNoteTableViewController" customModule="TravelAssist" customModuleProvider="target" sceneMemberID="viewController">
@@ -216,7 +217,7 @@
                         <viewLayoutGuide key="safeArea" id="SEq-56-YPR"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Note" id="iql-gp-F41">
+                    <navigationItem key="navigationItem" title="Add" id="iql-gp-F41">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="dsv-r0-oRU">
                             <connections>
                                 <segue destination="xng-LA-Pe5" kind="unwind" unwindAction="unwindSegueWithSegue:" id="L5E-4g-TQ0"/>
@@ -279,6 +280,9 @@
             <point key="canvasLocation" x="1728.985507246377" y="32.8125"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ObJ-T9-whu"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="fallbackthumbnail copy" width="550" height="340"/>
         <systemColor name="labelColor">
