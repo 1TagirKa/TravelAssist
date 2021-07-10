@@ -1,30 +1,174 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main Menu View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="Y6W-OH-hqX" customClass="MainMenuViewController" customModule="TravelAssist" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SIH-Of-W5u">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bny-B0-EDD">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="2000"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добро пожаловать в Японию!" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uAb-oq-bWL">
+                                                <rect key="frame" x="8" y="0.0" width="384" height="56"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Интересные факты про Японию" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXX-Ne-YWj">
+                                                <rect key="frame" x="8" y="293" width="384" height="48"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Japan Image" translatesAutoresizingMaskIntoConstraints="NO" id="O0c-xI-4Ja">
+                                                <rect key="frame" x="8" y="51" width="394" height="222"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="50"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Последние новости" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2e-w3-Thw">
+                                                <rect key="frame" x="8" y="816" width="347" height="29"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0tR-49-iR7" userLabel="News Table View">
+                                                <rect key="frame" x="8" y="853" width="394" height="308"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsTableViewCell" rowHeight="82" id="8gd-co-B2w" customClass="NewsTableViewCell" customModule="TravelAssist">
+                                                        <rect key="frame" x="0.0" y="24.333333969116211" width="394" height="82"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8gd-co-B2w" id="W9m-jk-45P">
+                                                            <rect key="frame" x="0.0" y="0.0" width="394" height="82"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98j-Ld-Y72">
+                                                                    <rect key="frame" x="10" y="20" width="374" height="42"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="98j-Ld-Y72" firstAttribute="top" secondItem="W9m-jk-45P" secondAttribute="top" constant="20" id="0VT-OM-yoz"/>
+                                                                <constraint firstItem="98j-Ld-Y72" firstAttribute="leading" secondItem="W9m-jk-45P" secondAttribute="leading" constant="10" id="1oM-tL-DbZ"/>
+                                                                <constraint firstAttribute="trailing" secondItem="98j-Ld-Y72" secondAttribute="trailing" constant="10" id="6RL-bo-TE6"/>
+                                                                <constraint firstAttribute="bottom" secondItem="98j-Ld-Y72" secondAttribute="bottom" constant="20" id="J1C-oh-dBw"/>
+                                                            </constraints>
+                                                        </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="newsLabel" destination="98j-Ld-Y72" id="fBk-Bw-aDe"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                            </tableView>
+                                            <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" delaysContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gfn-XX-YcX">
+                                                <rect key="frame" x="8" y="331" width="394" height="412"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <prototypes>
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FactTableViewCell" rowHeight="77" id="EUR-uy-rkf" customClass="FactTableViewCell" customModule="TravelAssist">
+                                                        <rect key="frame" x="0.0" y="24.333333969116211" width="394" height="77"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EUR-uy-rkf" id="mb1-HW-4fw">
+                                                            <rect key="frame" x="0.0" y="0.0" width="394" height="77"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fact Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WdX-sP-CcX">
+                                                                    <rect key="frame" x="10" y="20" width="374" height="37"/>
+                                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="WdX-sP-CcX" firstAttribute="leading" secondItem="mb1-HW-4fw" secondAttribute="leading" constant="10" id="Ond-pV-vfP"/>
+                                                                <constraint firstItem="WdX-sP-CcX" firstAttribute="top" secondItem="mb1-HW-4fw" secondAttribute="top" constant="20" id="Qxd-rP-T93"/>
+                                                                <constraint firstAttribute="bottom" secondItem="WdX-sP-CcX" secondAttribute="bottom" constant="20" id="Tx2-gV-xDf"/>
+                                                                <constraint firstAttribute="trailing" secondItem="WdX-sP-CcX" secondAttribute="trailing" constant="10" id="en9-Pe-6TS"/>
+                                                            </constraints>
+                                                        </tableViewCellContentView>
+                                                        <connections>
+                                                            <outlet property="factLabel" destination="WdX-sP-CcX" id="7jE-EF-Q26"/>
+                                                        </connections>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                            </tableView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Npg-ab-Q4V">
+                                                <rect key="frame" x="374" y="15" width="28" height="27"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                <state key="normal">
+                                                    <imageReference key="image" image="gearshape" catalog="system" symbolScale="large"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="setCounrtyActionButtion:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Jcn-Ea-itU"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2000" id="gNJ-mf-YrQ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Bny-B0-EDD" firstAttribute="leading" secondItem="tVj-84-xrx" secondAttribute="leading" id="AtW-if-Ecs"/>
+                                    <constraint firstItem="Bny-B0-EDD" firstAttribute="width" secondItem="LjE-ue-Bu0" secondAttribute="width" id="K3N-Pb-V01"/>
+                                    <constraint firstItem="Bny-B0-EDD" firstAttribute="top" secondItem="tVj-84-xrx" secondAttribute="top" id="KRe-JH-tFo"/>
+                                    <constraint firstItem="Bny-B0-EDD" firstAttribute="trailing" secondItem="tVj-84-xrx" secondAttribute="trailing" id="LpB-08-7t3"/>
+                                    <constraint firstItem="Bny-B0-EDD" firstAttribute="bottom" secondItem="tVj-84-xrx" secondAttribute="bottom" id="nq1-z6-00p"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="tVj-84-xrx"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="LjE-ue-Bu0"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="414" height="1400"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="414" height="1500"/>
+                    <connections>
+                        <outlet property="factsTableView" destination="Gfn-XX-YcX" id="wV9-HI-6mU"/>
+                        <outlet property="latestNewsLabel" destination="E2e-w3-Thw" id="LfY-cS-KF8"/>
+                        <outlet property="mainScrollView" destination="SIH-Of-W5u" id="TTw-8n-Xnr"/>
+                        <outlet property="newsTableView" destination="0tR-49-iR7" id="IrV-so-5D4"/>
+                        <outlet property="scrollViewHeightConstraint" destination="gNJ-mf-YrQ" id="H2M-NE-2hV"/>
+                        <outlet property="topImageView" destination="O0c-xI-4Ja" id="B5P-cr-6fh"/>
+                    </connections>
+                </viewController>
             </objects>
-            <point key="canvasLocation" x="30" y="89"/>
+            <point key="canvasLocation" x="28.985507246376812" y="88.392857142857139"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Japan Image" width="1200" height="675"/>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
