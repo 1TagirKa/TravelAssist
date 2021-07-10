@@ -8,16 +8,21 @@
 import Foundation
 import UIKit
 
+protocol EditEndDelegate{
+    func onCompleteButton(country: String)
+}
+
 class OverlayView: UIViewController {
+    
+    var delegate: EditEndDelegate?
     
     @IBOutlet weak var setCountryPickerView: UIPickerView!
     var hasSetPointOrigin = false
     var pointOrigin: CGPoint?
+    var countrySelected: String?
     
     var countriesData: [String] = [
-        "Япония",
         "Соединенные Штаты Америки",
-        "Швейцария",
         "Франция",
         "Германия",
         "Испания",
@@ -32,6 +37,8 @@ class OverlayView: UIViewController {
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognizerAction))
         view.addGestureRecognizer(panGesture)
         
+        countriesData = UserDefaults.standard.stringArray(forKey: "countriesData")!
+        
         setCountryPickerView.dataSource = self
         setCountryPickerView.delegate = self
     }
@@ -44,7 +51,24 @@ class OverlayView: UIViewController {
     }
     
     @IBAction func cancelButtonAction(_ sender: Any) {
-        presentedViewController?.dismiss(animated: true)
+        dismiss(animated: true)
+    }
+    
+    @IBAction func completeButtonAction(_ sender: Any) {
+        if countrySelected == nil{
+            countrySelected = countriesData[0]
+        }
+    
+        delegate?.onCompleteButton(country: countrySelected!)
+        dismiss(animated: true)
+        
+        countriesData.append(UserDefaults.standard.string(forKey: "selectedCountry")!)
+        var countriesData = Array(Set(countriesData))
+        
+        countriesData.remove(at: countriesData.firstIndex(of: countrySelected!)!)
+        countriesData.sort()
+        UserDefaults.standard.set(countrySelected, forKey: "selectedCountry")
+        UserDefaults.standard.set(countriesData, forKey: "countriesData")
     }
     
     
@@ -87,6 +111,6 @@ extension OverlayView: UIPickerViewDelegate{
     }
         
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print(countriesData[row])
+        countrySelected = countriesData[row]
     }
 }
