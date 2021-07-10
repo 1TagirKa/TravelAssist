@@ -2,7 +2,7 @@
 //  GifHelper.swift
 //  TravelAssist
 //
-//  Created by Тагир Кабиров on 07.07.2021.
+//  Created by Алексей Горбунов on 07.07.2021.
 //
 
 import Foundation
