@@ -17,6 +17,14 @@
 		1EA3E34A26930F8E00B56E2E /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EA3E34926930F8E00B56E2E /* Search.storyboard */; };
 		1EA3E34D26930FAF00B56E2E /* Notes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EA3E34C26930FAF00B56E2E /* Notes.storyboard */; };
 		1EA3E35026930FF500B56E2E /* Converter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EA3E34F26930FF500B56E2E /* Converter.storyboard */; };
+		3940B3B226948AD200C93936 /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3940B3B126948AD200C93936 /* TipsViewController.swift */; };
+		3940B3BB2694982200C93936 /* TipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3940B3BA2694982200C93936 /* TipTableViewCell.swift */; };
+		3940B3BD26949FED00C93936 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3940B3BC26949FED00C93936 /* DetailViewController.swift */; };
+		395560722695C5EF00A0B83C /* BigTipTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395560712695C5EF00A0B83C /* BigTipTableViewCell.swift */; };
+		3955607A2695DC1600A0B83C /* GifHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395560792695DC1600A0B83C /* GifHelper.swift */; };
+		3955607C2695DD5100A0B83C /* SynthWaveCar.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3955607B2695DD5100A0B83C /* SynthWaveCar.gif */; };
+		395560802695ECA400A0B83C /* JourneyGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3955607F2695ECA400A0B83C /* JourneyGif.gif */; };
+		397D916626970F4500DA3D06 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397D916526970F4500DA3D06 /* PageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +40,14 @@
 		1EA3E34926930F8E00B56E2E /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		1EA3E34C26930FAF00B56E2E /* Notes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notes.storyboard; sourceTree = "<group>"; };
 		1EA3E34F26930FF500B56E2E /* Converter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Converter.storyboard; sourceTree = "<group>"; };
+		3940B3B126948AD200C93936 /* TipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
+		3940B3BA2694982200C93936 /* TipTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipTableViewCell.swift; sourceTree = "<group>"; };
+		3940B3BC26949FED00C93936 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		395560712695C5EF00A0B83C /* BigTipTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigTipTableViewCell.swift; sourceTree = "<group>"; };
+		395560792695DC1600A0B83C /* GifHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifHelper.swift; sourceTree = "<group>"; };
+		3955607B2695DD5100A0B83C /* SynthWaveCar.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = SynthWaveCar.gif; path = ../../../SynthWaveCar.gif; sourceTree = "<group>"; };
+		3955607F2695ECA400A0B83C /* JourneyGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = JourneyGif.gif; path = ../../../JourneyGif.gif; sourceTree = "<group>"; };
+		397D916526970F4500DA3D06 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +107,14 @@
 			isa = PBXGroup;
 			children = (
 				1EA3E34326930F4100B56E2E /* Tips.storyboard */,
+				397D916526970F4500DA3D06 /* PageViewController.swift */,
+				395560712695C5EF00A0B83C /* BigTipTableViewCell.swift */,
+				3940B3BC26949FED00C93936 /* DetailViewController.swift */,
+				3940B3B126948AD200C93936 /* TipsViewController.swift */,
+				395560792695DC1600A0B83C /* GifHelper.swift */,
+				3940B3BA2694982200C93936 /* TipTableViewCell.swift */,
+				3955607B2695DD5100A0B83C /* SynthWaveCar.gif */,
+				3955607F2695ECA400A0B83C /* JourneyGif.gif */,
 			);
 			path = Tips;
 			sourceTree = "<group>";
@@ -176,6 +200,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				395560802695ECA400A0B83C /* JourneyGif.gif in Resources */,
+				3955607C2695DD5100A0B83C /* SynthWaveCar.gif in Resources */,
 				1EA3E33826930EE200B56E2E /* LaunchScreen.storyboard in Resources */,
 				1EA3E34D26930FAF00B56E2E /* Notes.storyboard in Resources */,
 				1EA3E34426930F4100B56E2E /* Tips.storyboard in Resources */,
@@ -194,8 +220,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3955607A2695DC1600A0B83C /* GifHelper.swift in Sources */,
 				1EA3E32C26930EDF00B56E2E /* AppDelegate.swift in Sources */,
+				3940B3BB2694982200C93936 /* TipTableViewCell.swift in Sources */,
+				3940B3BD26949FED00C93936 /* DetailViewController.swift in Sources */,
+				3940B3B226948AD200C93936 /* TipsViewController.swift in Sources */,
+				395560722695C5EF00A0B83C /* BigTipTableViewCell.swift in Sources */,
 				1EA3E32E26930EDF00B56E2E /* SceneDelegate.swift in Sources */,
+				397D916626970F4500DA3D06 /* PageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,7 +374,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TravelAssist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -350,8 +384,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-.TravelAssist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -360,7 +395,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = TravelAssist/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -368,8 +405,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-.TravelAssist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

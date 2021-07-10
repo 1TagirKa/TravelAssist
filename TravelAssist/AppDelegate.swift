@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  TravelAssist
 //
-//  Created by Tagir Kabirov on 05.07.2021.
+//  Created by Алексей Горбунов on 05.07.2021.
 //
 
 import UIKit
