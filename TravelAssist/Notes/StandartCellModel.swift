@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Standart {
+struct Standart: Codable {
     var title: String
     var description: String
     var emoji: String

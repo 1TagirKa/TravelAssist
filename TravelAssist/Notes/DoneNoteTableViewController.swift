@@ -17,6 +17,11 @@ class DoneNoteTableViewController: UITableViewController {
         clearButtonState()
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
+        
+        if let data = UserDefaults.standard.object(forKey: "done") as? Data {
+            doneNotes = try! PropertyListDecoder().decode(Array<Standart>.self, from: data)
+        }
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(doneNotes), forKey: "done")
     }
     
     @IBAction func clearAllNotes(_ sender: Any) {
@@ -26,6 +31,7 @@ class DoneNoteTableViewController: UITableViewController {
         }
         doneNotes.removeAll()
         tableView.reloadData()
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(doneNotes), forKey: "done")
     }
     
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {

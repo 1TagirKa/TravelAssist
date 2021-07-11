@@ -22,6 +22,12 @@ class NotesTableViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         tableView.tableFooterView = UIView()
+        
+        if let data = UserDefaults.standard.object(forKey: "card") as? Data {
+            unfulfilledNotes = try! PropertyListDecoder().decode(Array<Standart>.self, from: data)
+        }
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(unfulfilledNotes), forKey: "card")
+        
     }
     
     @IBAction func unwindSegue(segue: UIStoryboardSegue){
@@ -37,6 +43,8 @@ class NotesTableViewController: UITableViewController {
         unfulfilledNotes.append(note)
         tableView.insertRows(at: [indexPath], with: .automatic)
         }
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(unfulfilledNotes), forKey: "card")
+        
     }
 
 
@@ -100,6 +108,7 @@ class NotesTableViewController: UITableViewController {
             guard let dvc = segue.destination as? DoneNoteTableViewController else{return}
             for element in self.doneNote {
                 dvc.doneNotes.append(element)
+                UserDefaults.standard.set(try? PropertyListEncoder().encode(dvc.doneNotes), forKey: "done")
             }
             self.doneNote.removeAll()
             return
