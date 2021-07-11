@@ -11,23 +11,28 @@ class NotesTableViewController: UITableViewController {
     var note = Standart(title: "", description: "", emoji: "", isDone: false)
     
     var doneNote = [Standart]()
-    
-    var unfulfilledNotes = [
-        Standart(title: "Купить продукты", description: "молоко и тд", emoji: "🍔", isDone: false),
-        Standart(title: "Забронировать авто", description: "На 7 дней ", emoji: "🚗", isDone: false),
-        Standart(title: "Сдать комнату", description: "+5747499", emoji: "🏯", isDone: false)
-    ]
+    var unfulfilledNotes: [Standart] {
+        get {
+            guard let data = UserDefaults.standard.value(forKey: "unfulfilledNotes") as? Data else { return [] }
+            
+            do {
+                let categories = try PropertyListDecoder().decode(Array<Standart>.self, from: data)
+                return categories
+            }
+            catch {
+                return []
+            }
+        }
+        set {
+            UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey: "unfulfilledNotes")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = self.editButtonItem
+        self.navigationItem.leftBarButtonItem?.title = "Править"
         tableView.tableFooterView = UIView()
-        
-        if let data = UserDefaults.standard.object(forKey: "card") as? Data {
-            unfulfilledNotes = try! PropertyListDecoder().decode(Array<Standart>.self, from: data)
-        }
-        UserDefaults.standard.set(try? PropertyListEncoder().encode(unfulfilledNotes), forKey: "card")
-        
     }
     
     @IBAction func unwindSegue(segue: UIStoryboardSegue){
@@ -43,7 +48,6 @@ class NotesTableViewController: UITableViewController {
         unfulfilledNotes.append(note)
         tableView.insertRows(at: [indexPath], with: .automatic)
         }
-        UserDefaults.standard.set(try? PropertyListEncoder().encode(unfulfilledNotes), forKey: "card")
         
     }
 
@@ -65,6 +69,7 @@ class NotesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        self.navigationItem.leftBarButtonItem?.title = "Готово"
         return .delete
     }
     
@@ -85,7 +90,6 @@ class NotesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let done = doneAction(at: indexPath)
-
         return UISwipeActionsConfiguration(actions: [done])
     }
     
@@ -108,7 +112,6 @@ class NotesTableViewController: UITableViewController {
             guard let dvc = segue.destination as? DoneNoteTableViewController else{return}
             for element in self.doneNote {
                 dvc.doneNotes.append(element)
-                UserDefaults.standard.set(try? PropertyListEncoder().encode(dvc.doneNotes), forKey: "done")
             }
             self.doneNote.removeAll()
             return
@@ -118,7 +121,7 @@ class NotesTableViewController: UITableViewController {
         let navigationVC = segue.destination as! UINavigationController
         let newNoteVC = navigationVC.topViewController as! NewNoteTableViewController
         newNoteVC.note = note
-        newNoteVC.title = "Edit"
+        newNoteVC.title = "Редактировать"
     }
 
 }

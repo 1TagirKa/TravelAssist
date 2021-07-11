@@ -11,17 +11,27 @@ class DoneNoteTableViewController: UITableViewController {
 
     @IBOutlet weak var clearButton: UIBarButtonItem!
     var note = Standart(title: "", description: "", emoji: "", isDone: false)
-    var doneNotes = [Standart]()
+    var doneNotes: [Standart] {
+        get {
+            guard let data = UserDefaults.standard.value(forKey: "doneNotes") as? Data else { return [] }
+            
+            do {
+                let categories = try PropertyListDecoder().decode(Array<Standart>.self, from: data)
+                return categories
+            }
+            catch {
+                return []
+            }
+        }
+        set {
+            UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey: "doneNotes")
+        }
+    }
     
     override func viewDidLoad() {
         clearButtonState()
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
-        
-        if let data = UserDefaults.standard.object(forKey: "done") as? Data {
-            doneNotes = try! PropertyListDecoder().decode(Array<Standart>.self, from: data)
-        }
-        UserDefaults.standard.set(try? PropertyListEncoder().encode(doneNotes), forKey: "done")
     }
     
     @IBAction func clearAllNotes(_ sender: Any) {
@@ -31,7 +41,6 @@ class DoneNoteTableViewController: UITableViewController {
         }
         doneNotes.removeAll()
         tableView.reloadData()
-        UserDefaults.standard.set(try? PropertyListEncoder().encode(doneNotes), forKey: "done")
     }
     
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {

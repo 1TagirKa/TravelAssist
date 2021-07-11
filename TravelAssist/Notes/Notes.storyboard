@@ -75,10 +75,10 @@
                     <navigationItem key="navigationItem" id="WiG-kb-i9W">
                         <nil key="title"/>
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="mtk-Bl-81Y">
-                            <rect key="frame" x="164.5" y="6" width="85" height="32"/>
+                            <rect key="frame" x="141" y="6" width="132" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="17"/>
-                            <state key="normal" title="Unfulfilled">
+                            <state key="normal" title="Невыполненные">
                                 <color key="titleColor" systemColor="labelColor"/>
                             </state>
                             <connections>
@@ -96,7 +96,7 @@
             </objects>
             <point key="canvasLocation" x="901.44927536231887" y="32.8125"/>
         </scene>
-        <!--Done-->
+        <!--Выполненные-->
         <scene sceneID="l2N-pn-TmU">
             <objects>
                 <tableViewController id="Gjg-k7-bV0" customClass="DoneNoteTableViewController" customModule="TravelAssist" customModuleProvider="target" sceneMemberID="viewController">
@@ -159,8 +159,8 @@
                             <outlet property="delegate" destination="Gjg-k7-bV0" id="4KZ-rw-aeO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Done" id="deh-aY-Xxn">
-                        <barButtonItem key="rightBarButtonItem" title="Clear" id="nL4-FM-FQ0">
+                    <navigationItem key="navigationItem" title="Выполненные" id="deh-aY-Xxn">
+                        <barButtonItem key="rightBarButtonItem" title="Удалить" id="nL4-FM-FQ0">
                             <connections>
                                 <action selector="clearAllNotes:" destination="Gjg-k7-bV0" id="xLs-HX-aRe"/>
                             </connections>
@@ -174,7 +174,7 @@
             </objects>
             <point key="canvasLocation" x="901" y="753"/>
         </scene>
-        <!--Add-->
+        <!--Добавить-->
         <scene sceneID="FeY-GN-Cyg">
             <objects>
                 <viewController id="slS-4f-a4l" customClass="NewNoteTableViewController" customModule="TravelAssist" customModuleProvider="target" sceneMemberID="viewController">
@@ -182,7 +182,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Emoji" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GBJ-Mi-M6P">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Эмоджи" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GBJ-Mi-M6P">
                                 <rect key="frame" x="20" y="349" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -191,7 +191,7 @@
                                     <action selector="textChanged:" destination="slS-4f-a4l" eventType="editingChanged" id="Riy-fR-2CC"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cpd-AM-45Q">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Название" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cpd-AM-45Q">
                                 <rect key="frame" x="20" y="391" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -204,7 +204,7 @@
                                 <rect key="frame" x="52" y="105" width="304" height="236"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iVa-2j-O3I">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Описание" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iVa-2j-O3I">
                                 <rect key="frame" x="20" y="431" width="374" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -217,13 +217,13 @@
                         <viewLayoutGuide key="safeArea" id="SEq-56-YPR"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add" id="iql-gp-F41">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="dsv-r0-oRU">
+                    <navigationItem key="navigationItem" title="Добавить" id="iql-gp-F41">
+                        <barButtonItem key="leftBarButtonItem" title="Отменить" id="dsv-r0-oRU">
                             <connections>
                                 <segue destination="xng-LA-Pe5" kind="unwind" unwindAction="unwindSegueWithSegue:" id="L5E-4g-TQ0"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Save" style="done" id="HAn-iH-qR1">
+                        <barButtonItem key="rightBarButtonItem" title="Готово" style="done" id="HAn-iH-qR1">
                             <connections>
                                 <segue destination="xng-LA-Pe5" kind="unwind" identifier="saveSegue" unwindAction="unwindSegueWithSegue:" id="IS4-oz-bpG"/>
                             </connections>

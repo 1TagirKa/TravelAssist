@@ -24,6 +24,7 @@ class NewNoteTableViewController: UIViewController {
         updateUI()
         noteImage.layer.cornerRadius = noteImage.frame.width / 2
         noteImage.clipsToBounds = true
+        self.navigationItem.leftBarButtonItem?.title = "Отменить"
     }
     
     private func updateSaveButtonState(){
